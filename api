@@ -1,0 +1,27 @@
+Acesso ao painel web: https://stagepartners.quero.io
+Conta: homologacao
+Login: cadastro
+Senha: xh0d8n
+
+Acesso a API de homologação: https://stageapi.quero.io
+Acesso a documentação da API: https://api.quero.io/documentation/
+
+Credenciais de acesso:
+placeId: 63b5da68e6d851011f8b2d3c
+Token: cXVlcm9kZWxpdmVyeTpub3Nzb3BhbzIwMjNxdWVyb2RlbGl2ZXJ5Om5vc3NvcGFvJCM=
+
+
+static  sendOrder = async(order:IorderP)=>{
+    const path = '/insertPedido/68f1bc2c-f5b2-4109-a8ad-c5cd780e65d3'
+    try{
+      const response = await axios.post(path,{
+       order
+      })
+      console.log(response.data)
+      return response.data
+    }catch(error){
+      console.log('error, command', error)
+}
+
+
+  }

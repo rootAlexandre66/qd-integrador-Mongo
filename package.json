@@ -1,0 +1,51 @@
+{
+  "name": "qd-integrador-trier",
+  "version": "1.5.0",
+  "bin": "monitor.js",
+  "private": true,
+  "scripts": {
+    "start": "node dist/monitor.js",
+    "dev": "ts-node-dev monitor.ts",
+    "build": "rimraf dist && tsc -p . && copyfiles --flat ./package.json dist",
+    "build:exe": "npm run build && cd dist && npm i && npm prune --production && pkg .",
+    "reinstall": "rimraf node_modules&&npm i",
+    "update": "npx npm-check-updates&&npx npm-check-updates -u && npm i"
+  },
+  "author": "",
+  "license": "ISC",
+  "pkg": {
+    "assets": [
+      "./lastSync",
+      "./**/*.*"
+    ],
+    "targets": [
+      "node14-macos-x64"
+    ],
+    "output": "dist"
+  },
+  "dependencies": {
+    "axios": "^1.2.6",
+    "dotenv": "^16.0.3",
+    "log4js": "^6.7.1",
+    "moment": "^2.29.4",
+    "pkg": "^5.8.1",
+    "query-string": "^7.1.1",
+    "stringify": "^5.2.0",
+    "ts-node-dev": "^2.0.0"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.2",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^9.0.2",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.33.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "rimraf": "^5.0.1",
+    "semantic-release": "^20.1.0"
+  }
+}

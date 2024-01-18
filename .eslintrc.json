@@ -1,0 +1,28 @@
+{
+  "env": {
+    "commonjs": true,
+    "es2021": true,
+    "node": true
+  },
+  "parser": "@babel/eslint-parser",
+  "extends": ["standard"],
+  "parserOptions": {
+    "ecmaVersion": 12
+  },
+  "rules": {
+    "semi": "off",
+    "eqeqeq": "off",
+    "node/no-path-concat": "off",
+    "array-callback-return": "off",
+    "space-before-function-paren": "off",
+    "no-useless-constructor": "off",
+    "no-self-assign": "off",
+    "dot-notation": "off",
+    "no-undef": "off",
+    "no-unreachable": "off",
+    "no-unused-vars": "off",
+    "promise/param-names": "off",
+    "prefer-promise-reject-errors": "off",
+    "prefer-const": "off"
+  }
+}

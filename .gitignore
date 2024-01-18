@@ -1,0 +1,10 @@
+node_modules
+produtos-nao-encontrados/*
+.DS_Store
+logs
+.flowconfig
+.env
+files
+.env
+/apidoc
+qd-integrador-trier.exe
