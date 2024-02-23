@@ -3,7 +3,7 @@ dotenv.config();
 import { ENV_VARS, PRODUTO_NOT_ATT, QUERO_DOMAIN, MONGO_DOMAIN } from './constants';
 ENV_VARS.load();
 
-import { writeLastSync, readLastSync, saveProductsNotFound } from './services/filesystem.service';
+import { writeLastSync, readLastSync, saveProductsNotFound, readDirLogsSync } from './services/filesystem.service';
 import { configure, getLogger } from 'log4js';
 import { PATHS } from './path-config';
 import moment from 'moment';
@@ -52,7 +52,7 @@ export const startApplication = async (): Promise<boolean> => {
     }
 
     const currentSyncDate = moment().add(3, 'hours').format(MONGO_DOMAIN.DATE_FORMAT);
-  //await getTestServer();
+
   try{
     await getProductChanged(String(lastSyncDate), currentSyncDate);
 
@@ -61,7 +61,6 @@ export const startApplication = async (): Promise<boolean> => {
   }
     //inicializa busca por pedidos
    //await getOrders(String(lastSyncDate), currentSyncDate);
-    
     const twoMinutesAgo = moment().subtract(1, 'minutes').format(MONGO_DOMAIN.DATE_FORMAT);
 
     await writeLastSync(twoMinutesAgo);
@@ -94,7 +93,7 @@ const getProductChanged = async (startDate: string, endDate: string) => {
   let qtdProdutos = 0;
   do {
     try{
-    products = await MongoCommand.getChangedProducts(startDate,endDate,offset,MONGO_DOMAIN.LIMIT);
+    products = await MongoCommand.getChangedProducts();
     }catch(error){
       console.log(error)
     }
@@ -157,12 +156,10 @@ const processProduct = async (product: IProductChangedResult, lastSyncDate:strin
     barcodePR,
     namePR,
     pricePR,
-    discountPricePR,
-    qtdStockPR,
-    isActivePR
+
   } = product;
 
-  const productInfoTR = `TR CODIGOBARRAS: ${barcodePR} - DESCRICAO:${namePR} - R$ ${pricePR} - PREÇO C/ DESCONTO: R$ ${discountPricePR} - ESTOQUE: ${qtdStockPR}`;
+  const productInfoTR = `TR CODIGOBARRAS: ${barcodePR} - DESCRICAO:${namePR} R$ - PREÇO C/ DESCONTO:${pricePR} `;
 
   console.log('\n');
   logger.info(`===================== processing product ${executions} =====================`);
@@ -193,45 +190,7 @@ const processProduct = async (product: IProductChangedResult, lastSyncDate:strin
         logger.warn(`internal code is equal ${internalCodePR}`);
       }
   
-      if (discountPricePR > 0 && discountPricePR !== priceQD) {
-        Object.assign(changesProduct, {
-          preco: discountPricePR,
-          precoAntigo: pricePR,
-          isPromocao: true
-        });
-      } else if (discountPricePR <= 0 && pricePR > 0 && pricePR !== priceQD) {
-        Object.assign(changesProduct, {
-          preco: pricePR,
-          precoAntigo: pricePR < priceQD ? priceQD : 0,
-          isPromocao: false
-        });
-      } else {
-        logger.warn('price in quero EQUAL');
-      }
-    }else{
-      console.log(" item nåo atualizavel")
-    }
-    if (internalCodePR !== internalCodeQD) {
-      changesProduct.novoCodigoInterno = internalCodePR;
-    } else {
-      logger.warn(`internal code is equal ${internalCodePR}`);
-    }
-
-    if (discountPricePR > 0 && discountPricePR !== priceQD) {
-      Object.assign(changesProduct, {
-        preco: discountPricePR,
-        precoAntigo: pricePR,
-        isPromocao: true
-      });
-    } else if (discountPricePR <= 0 && pricePR > 0 && pricePR !== priceQD) {
-      Object.assign(changesProduct, {
-        preco: pricePR,
-        precoAntigo: pricePR < priceQD ? priceQD : 0,
-        isPromocao: false
-      });
-    } else {
-      logger.warn('price in quero EQUAL');
-    }
+     
     const produtonotatt= PRODUTO_NOT_ATT.includes(internalCodeQD);
 
     if (produtonotatt) {
@@ -243,21 +202,7 @@ const processProduct = async (product: IProductChangedResult, lastSyncDate:strin
       logger.warn('control of stock is equal ATIVO');
     }
 
-    if (qtdStockPR !== qtdStockQD) {
-      changesProduct.quantidade = qtdStockPR;
-    } else {
-      logger.warn('stock in quero EQUAL');
-    }
-
-    if (!isActivePR && statusQD !== QUERO_DOMAIN.PRODUCT_STATUS.HIDDEN) {
-      changesProduct.status = QUERO_DOMAIN.PRODUCT_STATUS.HIDDEN;
-    } else if (isActivePR && qtdStockPR > 0 && statusQD !== QUERO_DOMAIN.PRODUCT_STATUS.ACTIVE) {
-      changesProduct.status = QUERO_DOMAIN.PRODUCT_STATUS.ACTIVE;
-    } else if (isActivePR && qtdStockPR <= 0 && statusQD !== QUERO_DOMAIN.PRODUCT_STATUS.MISSING) {
-      changesProduct.status = QUERO_DOMAIN.PRODUCT_STATUS.MISSING;
-    } else {
-      logger.warn('status is equal');
-    }
+  }
 
     if (Object.keys(changesProduct).length) {
       try {
@@ -352,20 +297,19 @@ const processProductStock = async (product: IStockChangedResult) => {
 };
 
 function generateProductEntity(product: IProductChangedResult): IParamsRegisterProduct {
-  const { namePR: nome, pricePR, barcodePR: codigoBarras, internalCodePR: codigoInterno, discountPricePR } = product;
+  const { namePR: nome, pricePR, barcodePR: codigoBarras, internalCodePR: codigoInterno } = product;
 
-  const isPromotionTR = discountPricePR > 0;
 
   return {
     nome,
     categoriaId: ENV_VARS.CATEGORY_ID_DEFAULT,
     status: QUERO_DOMAIN.PRODUCT_STATUS.HIDDEN,
-    preco: isPromotionTR ? discountPricePR : pricePR,
-    precoAntigo: isPromotionTR ? pricePR : 0,
+    preco: pricePR,
+    precoAntigo: 0,
     codigoBarras,
     codigoInterno,
     isPesavel: false,
-    isPromocao: isPromotionTR,
+    isPromocao: false,
     isSazonal: false
   };
 }

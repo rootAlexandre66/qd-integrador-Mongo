@@ -69,7 +69,7 @@ export const readDirLogsSync = () => {
         return null;
       }
 
-      res(files);
+      res(files[0]);
       return null;
     });
   });

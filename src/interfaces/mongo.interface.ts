@@ -3,10 +3,7 @@ export interface IProductChangedResult {
   barcodePR: string;
   namePR: string;
   pricePR: number;
-  discountPricePR: number;
-  qtdStockPR: number;
-  isActivePR: boolean;
-  isIntegrationEcommercePR: boolean;
+
 }
 
 export interface IStockChangedResult {

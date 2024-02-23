@@ -1,0 +1,160 @@
+{
+  "produtos": [
+            { "codInterno": "377", "nome": "AEROLIN spray 200dos", "codBarras": "7896269900150", "preco": 27.23 },
+            { "codInterno": "1624", "nome": "AVAMYS 27,5mg spray nas 120 dos", "codBarras": "7896015518875", "preco": 71.7 },
+            { "codInterno": "6063", "nome": "DORFLEX 300+35+50 mg comp x 300 emb. mult", "codBarras": "7891058017392", "preco": 7 },
+            { "codInterno": "6467", "nome": "ENGOV display 25 env x 6 comp", "codBarras": "7896094903104", "preco": 9.5 },
+            { "codInterno": "6510", "nome": "ENTEROGERMINA 2bcfu/5ml fr 10ml", "codBarras": "7891058016999", "preco": 65.29 },
+            { "codInterno": "7126", "nome": "FILTRUM ULTRA SECO FPS 30 creme 60gr", "codBarras": "7896094208537", "preco": 95 },
+            { "codInterno": "7251", "nome": "FLIXOTIDE 50mcg spray 120 dos", "codBarras": "7896015516581", "preco": 202 },
+            { "codInterno": "7315", "nome": "FLORAX sus oral cx 5 flac x 5ml adu", "codBarras": "7896685300190", "preco": 53.13 },
+            { "codInterno": "7957", "nome": "GINO-CANESTEN 500mg creme vag 1comp+aplic", "codBarras": "7891106001755", "preco": 96.31 },
+            { "codInterno": "9049", "nome": "LACRIFILM 5mg/ml sol oft fr gts 15ml", "codBarras": "7896006290216", "preco": 40.83 },
+            { "codInterno": "9685", "nome": "LUFTAL frasco 15ml", "codBarras": "7896016804915", "preco": 30.39 },
+            { "codInterno": "10526", "nome": "MUVINLAX cx 20 sach x 14g", "codBarras": "10000000000022", "preco": 50.08 },
+            { "codInterno": "12566", "nome": "PONDERA 25mg cx 20 comp", "codBarras": "7891317421595", "preco": 140.7 },
+            { "codInterno": "13311", "nome": "RENU PLUS Pack-On fr 355ml+fr 120ml+estojo (+12% IPI)", "codBarras": "7896046381004", "preco": 55.46 },
+            { "codInterno": "13392", "nome": "RETEMIC 5mg cx 30 comp", "codBarras": "7896637022552", "preco": 43.71 },
+            { "codInterno": "14342", "nome": "SONRISAL cx 60 comp eferv sb limao", "codBarras": "7896015525231", "preco": 2.5 },
+            { "codInterno": "16086", "nome": "VENZER HCT 16+12,5mg cx 30 comp", "codBarras": "7896094206410", "preco": 90.41 },
+            { "codInterno": "16397", "nome": "WINTER AP 6+120mg cx 8 cap", "codBarras": "7898096577567", "preco": 37.26 },
+            { "codInterno": "19411", "nome": "NORIPURUM C/30 COMP-OUTROS", "codBarras": "7898581710547", "preco": 72.1 },
+            { "codInterno": "19467", "nome": "POMADA LIMPA PELE 30G (PULSY)", "codBarras": "7893595952594", "preco": 30 },
+            { "codInterno": "19499", "nome": "KALONAT 20% 10ML (NATUL)", "codBarras": "7899470807997", "preco": 18 },
+            { "codInterno": "19501", "nome": "LUFBEM GOTAS 15ML (NATUL)", "codBarras": "7898133137969", "preco": 9.99 },
+            { "codInterno": "19502", "nome": "MAXALGINA 1G C/ 10 COMP (NATUL)", "codBarras": "7899470807362", "preco": 12.99 },
+            { "codInterno": "19505", "nome": "SEAKALM 260MG C/ 20 COMP (NATUL)", "codBarras": "7898133136047", "preco": 25.99 },
+            { "codInterno": "19508", "nome": "TYLEMAX 15ML (NATUL)", "codBarras": "7898133130410", "preco": 6.99 },
+            { "codInterno": "19511", "nome": "VARIVAX 100MG C/30 COMP (NATUL)", "codBarras": "7898133136450", "preco": 26.99 },
+            { "codInterno": "19512", "nome": "VARIVAX 300MG C/30 COMP (NATUL)", "codBarras": "7899470803975", "preco": 40 },
+            { "codInterno": "19861", "nome": "ENGOV AFTER BERRY VIBES FR 250ML-DEMAIS PROD", "codBarras": "7896094921351", "preco": 11 },
+            { "codInterno": "19862", "nome": "ENGOV AFTER CITRUS FR 250ML-DEMAIS PROD", "codBarras": "7896094919693", "preco": 11 },
+                  {
+                    "codInterno": "19863",
+                    "nome": "ENGOV AFTER TANGERINA FR 250ML-DEMAIS PROD",
+                    "codBarras": "7896094919709",
+                    "preco": 11
+                  },
+                  {
+                    "codInterno": "20047",
+                    "nome": "POLARADEX 100ML FRAMBOESA",
+                    "codBarras": "7898133131066",
+                    "preco": 9.99
+                  },
+                  {
+                    "codInterno": "20124",
+                    "nome": "EXPECTOFLUI XPE C/120ML - GUAIFENESINA",
+                    "codBarras": "7899470801384",
+                    "preco": 13
+                  },
+                  {
+                    "codInterno": "20126",
+                    "nome": "METIOTRAT SPRAY INCOLOR C/45ML",
+                    "codBarras": "7898133137426",
+                    "preco": 15
+                  },
+                  {
+                    "codInterno": "20130",
+                    "nome": "PASTA DAGUA NATULAB MENTOL C/80G - OXIDO DE ZINCO",
+                    "codBarras": "7899470805900",
+                    "preco": 15
+                  },
+                  {
+                    "codInterno": "20141",
+                    "nome": "PRYSMA 3MG C 20 COMP REV B1",
+                    "codBarras": "7891317024284",
+                    "preco": 86.43
+                  },
+                  {
+                    "codInterno": "20148",
+                    "nome": "MIRUGELL SOL OFT 15ML",
+                    "codBarras": "7896676435221",
+                    "preco": 60.43
+                  },
+                  {
+                    "codInterno": "20149",
+                    "nome": "MYRAFER 400MG C 30 COMP REV",
+                    "codBarras": "7898430192524",
+                    "preco": 61.38
+                  },
+                  {
+                    "codInterno": "20276",
+                    "nome": "ZIRVIT VITA C 30 CAPS",
+                    "codBarras": "7899824401109",
+                    "preco": 82
+                  },
+                  {
+                    "codInterno": "21397",
+                    "nome": "AZEDINHA  UVA",
+                    "codBarras": "7896286620253",
+                    "preco": 2
+                  },
+                  {
+                    "codInterno": "22817",
+                    "nome": "TADALAFILA 20MG C/4 COMP REV GMD-GENERICO",
+                    "codBarras": "7896004749730",
+                    "preco": 10
+                  },
+                  {
+                    "codInterno": "22986",
+                    "nome": "MAGMAX HORTELA 100ML (NATUL)",
+                    "codBarras": "7899470802275",
+                    "preco": 9.99
+                  },
+                  {
+                    "codInterno": "22987",
+                    "nome": "NASOJET ALTO FLUXO 30 ENV 2,16G (NATUL)",
+                    "codBarras": "7899470808284",
+                    "preco": 39.99
+                  },
+                  {
+                    "codInterno": "22988",
+                    "nome": "NASOJET ALTO FLUXO 30 ENV 2,16G + APLIC (NATUL)",
+                    "codBarras": "7899470808277",
+                    "preco": 45
+                  },
+                  {
+                    "codInterno": "22989",
+                    "nome": "TILEMAXY BABY SUS OR SER 100MG/ML X 15ML (NATUL)",
+                    "codBarras": "7899470808314",
+                    "preco": 15
+                  },
+                  {
+                    "codInterno": "22990",
+                    "nome": "ENGOV AFTER RED HITS 250ML",
+                    "codBarras": "7896094925120",
+                    "preco": 11
+                  },
+                  {
+                    "codInterno": "22991",
+                    "nome": "ENGOV UP MELANCIA LT 269ML",
+                    "codBarras": "7896094928367",
+                    "preco": 9.99
+                  },
+                  {
+                    "codInterno": "22992",
+                    "nome": "ENGOV UP MORA E KIWI LT 269ML OR",
+                    "codBarras": "7896094928350",
+                    "preco": 9.99
+                  },
+                  {
+                    "codInterno": "22993",
+                    "nome": "ENGOV UP ORIGINAL LATA  269ML OR",
+                    "codBarras": "7896094928343",
+                    "preco": 9.99
+                  },
+                  {
+                    "codInterno": "22994",
+                    "nome": "CICAPLAST B5 PLUS 40ML",
+                    "codBarras": "7908615000244",
+                    "preco": 92.5
+                  },
+                  {
+                    "codInterno": "22995",
+                    "nome": "RIVAROXABANA 15MG C/30CP REV GMD-GENERICO",
+                    "codBarras": "7896004759289",
+                    "preco": 35
+                  }
+              
+    ]
+}

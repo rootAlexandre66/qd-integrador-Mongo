@@ -1,5 +1,5 @@
-import { startApplication } from './src/app';
-const TIME_TO_RESTART_APPLICATION_IN_SECONDS = 10;
+import { startApplication } from './src/app-logs';
+const TIME_TO_RESTART_APPLICATION_IN_SECONDS = 720;
 
 const startLoop = () => {
   return new Promise((res) => {
